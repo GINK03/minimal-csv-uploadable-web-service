@@ -1,0 +1,8 @@
+version: '3'
+services:
+  log:
+    build: .
+    ports:
+     - "80:8000"
+    volumes:
+     - ./serviceFiles:/serviceFiles
