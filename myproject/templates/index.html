@@ -2,8 +2,18 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Hi, {{ user.username }}!</h1>
+    <h1>Hi, {{ user }}!</h1>
 	<!-- {% for post in posts %} -->
 	<!-- <div><p>{{ post.author.username }} says: <b>{{ post.body }}</b></p></div> -->
 	<!-- {% endfor %} -->
+	<div align="center">
+		分析する対象のCSVをアップロード
+		<form action="{{ url_for('home') }}" method="post"  enctype="multipart/form-data">
+			<input type="file" id="send_file" name="send_file" />
+			<input type="submit" value="Upload Csv">
+		</form>
+	</div>
+	<div align="center">
+		{{ table_html|safe }}
+	</div>
 {% endblock %}
